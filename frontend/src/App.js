@@ -1,6 +1,9 @@
+// App.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Footer'; // Import Footer component
+import NavBar from './Navbar'; // Import Navbar component
 
 function App() {
   const [spots, setSpots] = useState([]);
@@ -44,30 +47,39 @@ function App() {
   };
 
   return (
-    <div className="container text-center py-5">
-      <h1 className="mb-4">🚗 Parking Spot Finder</h1>
-      <p className="lead text-muted mb-4">
-        Find nearby parking in seconds – skip the hassle, save time!
-      </p>
-      <button className="btn btn-primary mb-4" onClick={findParking} disabled={loading}>
-        {loading ? 'Searching...' : 'Find Free Parking'}
-      </button>
+    <div className="d-flex flex-column min-vh-100">
+      {/* Include Navbar here */}
+      <NavBar />
 
-      {error && <div className="alert alert-danger">{error}</div>}
+      {/* Main content section */}
+      <div className="container text-center py-5 flex-grow-1">
+        <h1 className="mb-4">🚗 Parking Spot Finder</h1>
+        <p className="lead text-muted mb-4">
+          Find nearby parking in seconds – skip the hassle, save time!
+        </p>
+        <button className="btn btn-primary mb-4" onClick={findParking} disabled={loading}>
+          {loading ? 'Searching...' : 'Find Free Parking'}
+        </button>
 
-      {spots.length > 0 && (
-        <ul className="list-group">
-          {spots.map((spot, index) => (
-            <li key={index} className="list-group-item">
-              📍 {spot.description} – {spot.price ? `Ksh ${spot.price}` : 'Free'}
-            </li>
-          ))}
-        </ul>
-      )}
+        {error && <div className="alert alert-danger">{error}</div>}
 
-      {!loading && !error && spots.length === 0 && (
-        <p className="text-muted">No spots found yet. Try clicking the button!</p>
-      )}
+        {spots.length > 0 && (
+          <ul className="list-group">
+            {spots.map((spot, index) => (
+              <li key={index} className="list-group-item">
+                📍 {spot.description} – {spot.price ? `Ksh ${spot.price}` : 'Free'}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {!loading && !error && spots.length === 0 && (
+          <p className="text-muted">No spots found yet. Try clicking the button!</p>
+        )}
+      </div>
+
+      {/* Footer component */}
+      <Footer />
     </div>
   );
 }
