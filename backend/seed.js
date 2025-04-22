@@ -28,6 +28,13 @@ mongoose.connect('mongodb://localhost:27017/parkingfinder', {
       isAvailable: true,
       price: 50,
       timeLimit: "1 hour"
+    },
+    {
+      location: { lat: -1.2500, lng: 36.8833 },
+      description: "Kariobangi Market Parking", // 👈 NEW SPOT
+      isAvailable: true,
+      price: 30,
+      timeLimit: "1 hour"
     }
   ]);
 
