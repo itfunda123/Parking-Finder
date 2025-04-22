@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Footer'; // Import Footer component
-import NavBar from './Navbar'; // Import Navbar component
+import Footer from './Footer';
+import NavBar from './Navbar';
+import MapComponent from './MapComponent'; // 👈 Import the map component
 
 function App() {
   const [spots, setSpots] = useState([]);
@@ -48,10 +49,8 @@ function App() {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {/* Include Navbar here */}
       <NavBar />
 
-      {/* Main content section */}
       <div className="container text-center py-5 flex-grow-1">
         <h1 className="mb-4">🚗 Parking Spot Finder</h1>
         <p className="lead text-muted mb-4">
@@ -64,13 +63,26 @@ function App() {
         {error && <div className="alert alert-danger">{error}</div>}
 
         {spots.length > 0 && (
-          <ul className="list-group">
-            {spots.map((spot, index) => (
-              <li key={index} className="list-group-item">
-                📍 {spot.description} – {spot.price ? `Ksh ${spot.price}` : 'Free'}
-              </li>
-            ))}
-          </ul>
+          <>
+            <ul className="list-group">
+              {spots.map((spot, index) => (
+                <li key={index} className="list-group-item">
+                  📍 {spot.description} – {spot.price ? `Ksh ${spot.price}` : 'Free'}
+                </li>
+              ))}
+            </ul>
+
+            {/* Show map for the first spot */}
+            <div className="mt-4">
+              <MapComponent
+                origin={{ lat: coords.lat, lng: coords.lng }}
+                destination={{
+                  lat: spots[0].latitude,
+                  lng: spots[0].longitude,
+                }}
+              />
+            </div>
+          </>
         )}
 
         {!loading && !error && spots.length === 0 && (
@@ -78,7 +90,6 @@ function App() {
         )}
       </div>
 
-      {/* Footer component */}
       <Footer />
     </div>
   );
