@@ -1,5 +1,5 @@
 import React from 'react';
-
+import parkingcity from '../src/Assets/parkingcity.jpg';
 const About = () => {
   return (
     <div className="container my-5">
@@ -11,7 +11,7 @@ const About = () => {
       <div className="row align-items-center">
         <div className="col-md-6">
           <img 
-            src="https://source.unsplash.com/600x400/?parking,city" 
+            src={parkingcity} 
             alt="Parking Finder" 
             className="img-fluid rounded shadow" 
           />
