@@ -9,3 +9,8 @@ Parking Finder is your smart companion for stress-free urban parking. Whether yo
 🗺️ Directions to the nearest spot
 📍 Location-based smart search
 💬 User-contributed data
+
+![Screenshot1](https://github.com/itfunda123/Parking-Finder/raw/af4bf402d22031f5491e0566b734aa562c5a539e/Screenshot%202025-05-21%20111711.png)
+![Screenshot2](https://github.com/itfunda123/Parking-Finder/raw/af4bf402d22031f5491e0566b734aa562c5a539e/Screenshot%202025-05-21%20111723.png)
+![Screenshot3](https://github.com/itfunda123/Parking-Finder/raw/af4bf402d22031f5491e0566b734aa562c5a539e/Screenshot%202025-05-21%20111740.png)
+![Screenshot4](https://github.com/itfunda123/Parking-Finder/raw/af4bf402d22031f5491e0566b734aa562c5a539e/Screenshot%202025-05-21%20111825.png)
