@@ -1,7 +1,7 @@
 // App.js
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Footer'; // Import Footer component
+import Footer from './Footer';
 import NavBar from './Navbar';
 
 function App() {
