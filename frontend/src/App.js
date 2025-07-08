@@ -2,7 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Footer'; // Import Footer component
-import NavBar from './Navbar'; // Import Navbar component
+import NavBar from './Navbar';
 
 function App() {
   return (
