@@ -16,7 +16,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can send this data to your backend or email service
+    
     console.log('Form Submitted:', formData);
     alert('Thank you for contacting us!');
     setFormData({ name: '', email: '', message: '' });
